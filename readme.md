@@ -1,7 +1,7 @@
 # cpio-fs
 
 filesystem bindings for [cpio-stream](https://github.com/finnp/cpio-stream) based
-on [cpio-fs][https://github.com/mafintosh/cpio-fs]
+on [tar-fs](https://github.com/mafintosh/tar-fs)
 
 ```
 npm install cpio-fs
