@@ -1,0 +1,25 @@
+{
+  "name": "cpio-fs",
+  "version": "1.0.0",
+  "description": "filesystem bindings for cpio-stream",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/finnp/cpio-fs.git"
+  },
+  "keywords": [
+    "cpio",
+    "archive",
+    "file",
+    "fs"
+  ],
+  "author": "Finn Pauls",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/finnp/cpio-fs/issues"
+  },
+  "homepage": "https://github.com/finnp/cpio-fs"
+}
