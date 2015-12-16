@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/finnp/cpio-fs",
   "dependencies": {
-    "cpio-stream": "^1.2.0",
+    "cpio-stream": "^1.2.1",
     "tar-fs": "^1.9.0"
   },
   "devDependencies": {
