@@ -24,7 +24,7 @@ test('copy a -> copy/a', function (t) {
       var fileA = path.join(a, files[0])
       t.same(fs.readFileSync(fileB, 'utf-8'), fs.readFileSync(fileA, 'utf-8'))
       t.same(fs.statSync(fileB).mode, fs.statSync(fileA).mode)
-      t.same(fs.statSync(fileB).mtime.getTime(), fs.statSync(fileA).mtime.getTime())
+      t.ok(Math.abs(fs.statSync(fileB).mtime.getTime() - fs.statSync(fileA).mtime.getTime()) <= 1000)
     })
 })
 
@@ -44,13 +44,13 @@ test('copy b -> copy/b', function (t) {
       var dirB = path.join(b, files[0])
       var dirA = path.join(a, files[0])
       t.same(fs.statSync(dirB).mode, fs.statSync(dirA).mode)
-      t.same(fs.statSync(dirB).mtime.getTime(), fs.statSync(dirA).mtime.getTime())
+      t.ok(Math.abs(fs.statSync(dirB).mtime.getTime() - fs.statSync(dirA).mtime.getTime()) <= 1000)
       t.ok(fs.statSync(dirB).isDirectory())
       var fileB = path.join(dirB, 'test.txt')
       var fileA = path.join(dirA, 'test.txt')
       t.same(fs.readFileSync(fileB, 'utf-8'), fs.readFileSync(fileA, 'utf-8'))
       t.same(fs.statSync(fileB).mode, fs.statSync(fileA).mode)
-      t.same(fs.statSync(fileB).mtime.getTime(), fs.statSync(fileA).mtime.getTime())
+      t.ok(Math.abs(fs.statSync(fileB).mtime.getTime() - fs.statSync(fileA).mtime.getTime()) <= 1000)
     })
 })
 
@@ -82,7 +82,7 @@ test('symlink', function (t) {
       var linkA = path.join(a, 'link')
       var linkB = path.join(b, 'link')
 
-      t.same(fs.lstatSync(linkB).mtime.getTime(), fs.lstatSync(linkA).mtime.getTime())
+      t.ok(Math.abs(fs.statSync(linkB).mtime.getTime() - fs.statSync(linkA).mtime.getTime()) <= 1000)
       t.same(fs.readlinkSync(linkB), fs.readlinkSync(linkA))
     })
 })
@@ -115,7 +115,7 @@ test('follow symlinks', function (t) {
       var file1 = path.join(b, '.gitignore')
       var file2 = path.join(b, 'link')
 
-      t.same(fs.lstatSync(file1).mtime.getTime(), fs.lstatSync(file2).mtime.getTime())
+      t.ok(Math.abs(fs.statSync(file1).mtime.getTime() - fs.statSync(file2).mtime.getTime()) <= 1000)
       t.same(fs.readFileSync(file1), fs.readFileSync(file2))
     })
 })
