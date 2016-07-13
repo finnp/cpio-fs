@@ -175,13 +175,13 @@ test('map + dir + permissions', function (t) {
   }
 
   tar.pack(a)
-      .pipe(tar.extract(b, {map: aWithMode}))
-      .on('finish', function () {
-        var files = fs.readdirSync(b).sort()
-        var stat = fs.statSync(path.join(b, 'a'))
-        t.same(files.length, 1)
-        t.same(stat.mode & parseInt(777, 8), parseInt(700, 8))
-      })
+    .pipe(tar.extract(b, {map: aWithMode}))
+    .on('finish', function () {
+      var files = fs.readdirSync(b).sort()
+      var stat = fs.statSync(path.join(b, 'a'))
+      t.same(files.length, 1)
+      t.same(stat.mode & parseInt(777, 8), parseInt(700, 8))
+    })
 })
 
 test('specific entries', function (t) {

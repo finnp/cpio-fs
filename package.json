@@ -4,6 +4,7 @@
   "description": "filesystem bindings for cpio-stream",
   "main": "index.js",
   "scripts": {
+    "pretest": "standard",
     "test": "node test/index.js"
   },
   "repository": {
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "rimraf": "^2.4.4",
+    "standard": "7.1.2",
     "tape": "^4.2.2"
   }
 }

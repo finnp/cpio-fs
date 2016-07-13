@@ -3,7 +3,7 @@ var cpio = require('cpio-stream')
 
 exports.pack = function (cwd, opts) {
   opts = opts || {}
-  opts.pack = cpio.pack({format:opts.format || "odc"})
+  opts.pack = cpio.pack({format: opts.format || 'odc'})
   return tarfs.pack(cwd, opts)
 }
 
